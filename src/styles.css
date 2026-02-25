@@ -1,0 +1,13 @@
+/* src/styles.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Garante que a página ocupe toda a altura e tenha fundo escuro */
+html, body {
+  height: 100%;
+  background-color: #0f172a; /* Cor de fundo escura (slate-900) */
+  color: #e2e8f0; /* Cor de texto clara (slate-200) */
+  font-family: 'Inter', sans-serif; /* Define a fonte padrão */
+  scroll-behavior: smooth; /* Rolagem suave ao clicar em links */
+}
