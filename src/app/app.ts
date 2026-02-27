@@ -20,7 +20,21 @@ interface Project {
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'portfolio-alexsander'; // Propriedade title simples
+
+  title = 'portfolio-alexsander';
+
+  isMenuOpen = signal(false);
+
+  toggleMenu() {
+    this.isMenuOpen.update(val => !val);
+    // Trava a rolagem da página quando o menu está aberto
+    document.body.style.overflow = this.isMenuOpen() ? 'hidden' : 'auto';
+  }
+
+  closeMenu() {
+    this.isMenuOpen.set(false);
+    document.body.style.overflow = 'auto';
+  }
   
   currentYear = new Date().getFullYear();
 

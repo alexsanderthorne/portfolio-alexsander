@@ -1,6 +1,42 @@
 <main class="min-h-screen selection:bg-purple-500 selection:text-white pb-20">
   
-  <section class="max-w-6xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+  <button (click)="toggleMenu()"
+          class="fixed top-6 right-6 md:top-10 md:right-10 z-[60] w-14 h-14 bg-slate-800/80 backdrop-blur-md border border-slate-700 rounded-full flex flex-col justify-center items-center gap-1.5 cursor-pointer hover:bg-slate-700 hover:scale-105 transition-all shadow-2xl shadow-purple-900/20 group">
+    
+    <span class="w-6 h-0.5 bg-slate-200 rounded-full transition-all duration-300 origin-center"
+          [class]="isMenuOpen() ? 'rotate-45 translate-y-2 bg-purple-400' : ''"></span>
+    <span class="w-6 h-0.5 bg-slate-200 rounded-full transition-all duration-300"
+          [class]="isMenuOpen() ? 'opacity-0 translate-x-4' : ''"></span>
+    <span class="w-6 h-0.5 bg-slate-200 rounded-full transition-all duration-300 origin-center"
+          [class]="isMenuOpen() ? '-rotate-45 -translate-y-2 bg-purple-400' : ''"></span>
+  </button>
+
+  <div class="fixed inset-0 z-[50] bg-slate-950/95 backdrop-blur-xl transition-all duration-500 flex items-center justify-center"
+       [class]="isMenuOpen() ? 'opacity-100 visible' : 'opacity-0 invisible'">
+
+    <nav class="flex flex-col items-center gap-6 md:gap-8 text-center">
+      <a href="#inicio" (click)="closeMenu()" class="text-4xl md:text-6xl font-black text-slate-600 hover:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-2">
+        Início
+      </a>
+      <a href="#trajetoria" (click)="closeMenu()" class="text-4xl md:text-6xl font-black text-slate-600 hover:text-blue-400 transition-all duration-300 hover:scale-110 hover:-translate-y-2">
+        Qualificações
+      </a>
+      <a href="#sobre" (click)="closeMenu()" class="text-4xl md:text-6xl font-black text-slate-600 hover:text-blue-400 transition-all duration-300 hover:scale-110 hover:-translate-y-2">
+        Sobre Mim
+      </a>
+      <a href="#projetos" (click)="closeMenu()" class="text-4xl md:text-6xl font-black text-slate-600 hover:text-pink-400 transition-all duration-300 hover:scale-110 hover:-translate-y-2">
+        Projetos
+      </a>
+      <a href="#alemdcodigo" (click)="closeMenu()" class="text-4xl md:text-6xl font-black text-slate-600 hover:text-orange-400 transition-all duration-300 hover:scale-110 hover:-translate-y-2">
+        Além do Código
+      </a>
+      <a href="#servicos" (click)="closeMenu()" class="text-4xl md:text-6xl font-black text-slate-600 hover:text-purple-400 transition-all duration-300 hover:scale-110 hover:-translate-y-2">
+        Serviços
+      </a>
+    </nav>
+  </div>
+  
+  <section class="max-w-6xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center" id="inicio">
     
     <div class="order-2 md:order-1 space-y-6">
       <div class="inline-flex items-center px-3 py-1 text-xs font-mono text-green-400 bg-green-900/30 rounded-full border border-green-500/30">
@@ -61,7 +97,7 @@
     </div>
   </section>
 
-  <section class="max-w-6xl mx-auto px-6 py-20 bg-slate-900/50">
+  <section class="max-w-6xl mx-auto px-6 py-20 bg-slate-900/50" id="trajetoria">
     
     <div class="flex flex-col md:flex-row gap-12 items-start">
       
@@ -277,7 +313,7 @@
     </div>
   </section>
 
-  <section class="max-w-6xl mx-auto px-6 py-12">
+  <section class="max-w-6xl mx-auto px-6 py-12" id="projetos">
     <div class="flex items-center gap-4 mb-12">
       <h2 class="text-3xl font-bold text-white">Projetos em Destaque</h2>
       <div class="h-px bg-slate-800 flex-grow"></div>
