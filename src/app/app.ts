@@ -78,7 +78,7 @@ export class AppComponent {
       title: 'Event-Checkin-Python',
       category: 'Backend/API',
       description: 'Organize e gerencie seus eventos de forma eficiente e prática com o Event-Checkin-Python!',
-      tech: ['Python', 'Flask', 'SQLite', ''],
+      tech: ['Python', 'Flask', 'SQLite'],
       link: 'https://github.com/alexsanderthorne/Event-Checkin-Python.git'
     },
     {
